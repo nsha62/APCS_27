@@ -7,8 +7,13 @@ import java.util.Scanner;
 
 class starter {
 	public static void main(String args[]) {
-		// the string "I love to learn coding remotely." will appear in
-		// the command window when you compile and run this program.
-		System.out.print("I love to learn coding remotely."); 
+		String name = new String("Aliya");
+		String chorus = new String("Happy Birthday to you,");
+		String bridge = new String("Happy Birthday dear " + name);
+		System.out.println(chorus); 
+		System.out.println(chorus);
+		System.out.println(bridge);
+		System.out.println(chorus);
+
 	}
 }
