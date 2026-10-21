@@ -13,9 +13,75 @@ class starter {
 	static ArrayList<String> arr = new ArrayList<String>();
 
 	public static void main(String args[]) throws InterruptedException {
-		// Write your code here!
+		Scanner sc = new Scanner(System.in);
 
-		
+		System.out.println("Welcome to Type Quest!");
+		String time = getTime();
+		System.out.println("It is currently " + time + " and we're ready to play!");
+		System.out.println("Given a sentence, type it as fast as possible");
+		System.out.println();
+		System.out.println("-----------------------------------------------------------");
+
+		boolean isPlaying = true;
+
+		 while (isPlaying) {
+            System.out.println();
+            System.out.println("How would you like to play?");
+            System.out.println("  1. Random sentence");
+            System.out.println("  2. Choose a sentence");
+            System.out.println("  3. Quit");
+            System.out.print("Enter your choice: ");
+            int choice = sc.nextInt();
+ 
+			if (choice == 3) {
+				return;
+			}
+            else if (choice == 1 || choice == 2) {
+                String sentence = "";
+                int sentNum = 0;
+ 
+                if (choice == 1) {
+                    sentence = getSentence();
+                }
+                else {
+                    System.out.print("Please enter what number sentence you'd like to play: ");
+                    sentNum = sc.nextInt();
+                    sentence = getSentence(sentNum);
+                }
+
+	
+				System.out.println("-----------------Your sentence is:------------------");
+				System.out.println(sentence);
+				System.out.println("----------------------------------------------------");
+				System.out.println();
+
+				countdown();
+				startTimer();
+				String typed = sc.nextLine();
+				double secs = endTimer();
+	
+				int errors = compareSentences(sentence, typed);
+				double wpm = 0;
+				if (secs > 0) {
+					wpm = wordsInSentence(sentence)/secs*60;
+				}
+				double lpm = 0;
+				if (secs > 0) {
+					lpm = lettersInSentence(sentence)/secs*60;
+				}
+
+				System.out.println("-----------------------------------------------------------");
+				System.out.println("Nice job! Here is your result!");
+                System.out.println("Time:   " + secs);
+                System.out.println("Errors: " + errors);
+				System.out.println(lpm + " letters per minute");
+                System.out.println(wpm + " words per minute");
+                System.out.println("-----------------------------------------------------------");
+			}
+			else {
+                System.out.println("Please enter 1, 2, or 3.");
+			}
+		}
 	}
 
 	// This method returns the local current time as a String
