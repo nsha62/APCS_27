@@ -11,7 +11,7 @@ import java.util.Random;
 public class Donkey {
 	private String name;
 
-	private Donkey() {
+	public Donkey() {
 		name = "Donkey";
 	}
 
@@ -19,8 +19,9 @@ public class Donkey {
 		return name;
 	}
 
-	public void interact(Ogre shrek){
-		System.out.println(shrek.name + ", parfaits may be the most delicious thing on the whole planet!");
+	public void interact(String shrek){
+		shrek = "Shrek";
+		System.out.println(shrek + ", parfaits may be the most delicious thing on the whole planet!");
 		return;
 	}
 
