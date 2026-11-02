@@ -19,6 +19,8 @@ public class PooleDwarf {
 
 	public PooleDwarf(String name, int age){
 		// Complete this constructor
+		this.name = name;
+		this.age = age;
 	}
 
 	/*	Accessor Methods */
@@ -27,7 +29,7 @@ public class PooleDwarf {
 	}
 
 	public int getAge(){
-
+		return age;
 	}
 
 	/*	Mutator Methods	*/
@@ -41,6 +43,10 @@ public class PooleDwarf {
 
 	public boolean isSameName(String name){
 		// Complete this method
+		if (this.name.equals(name)) {
+			return true;
+		}
+		return false;
 	}
 }
 

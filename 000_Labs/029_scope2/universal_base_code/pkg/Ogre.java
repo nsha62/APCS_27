@@ -21,11 +21,11 @@ public class Ogre {
 		return name;
 	}
 
-	public boolean isUgly(boolean ugly){
-		
+	public boolean isUgly(boolean ugly) {
 		if (ugly == true) {
 			return true;
 		}
+		return false;
 	}
 
 	public void interact(Donkey donkey){
